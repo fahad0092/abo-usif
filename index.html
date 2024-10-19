@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أبو يوسف - الواجهة الرئيسية</title>
+    <title>صبيان شقراء</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* إعدادات عامة */
@@ -12,7 +12,7 @@
             direction: rtl;
             margin: 0;
             padding: 0;
-            background-color: #f0f2f5; /* لون خلفية فاتح */
+            background-color: #000000; /* لون خلفية فاتح */
         }
 
         /* رأس الصفحة */
@@ -80,7 +80,24 @@
             bottom: 0;
         }
     </style>
-</head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <style>
+        /* تحسين حركات التمرير */
+        [data-aos] {
+            opacity: 0.5;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        [data-aos="fade-up"] {
+            transform: translateY(20px);
+        }
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    </head>
+
 <body>
 
     <!-- رأس الصفحة -->
@@ -88,13 +105,14 @@
         صبيان شقراء
     </header>
 
+
     <!-- قسم الترحيب -->
-    <section class="hero-section">
-        <h1 id="welcomeMessage">مرحبًا بك في الموقع التعليمي</h1>
-        <div class="buttons-container">
-            <button class="button" onclick="location.href='books.html'">الكتب</button>
-            <button class="button" onclick="location.href='tutorials.html'">شروحات</button>
-            <button class="button" onclick="location.href='agreements.html'">اتفاقيات</button>
+    <section class="hero-section" data-aos="fade-up">
+        <h1 id="welcomeMessage" data-aos="fade-up">مرحبًا بك في الموقع التعليمي</h1>
+        <div class="buttons-container" data-aos="fade-up">
+            <button class="button" onclick="location.href='books.html'" data-aos="fade-up">الكتب</button>
+            <button class="button" onclick="location.href='tutorials.html'" data-aos="fade-up">شروحات</button>
+            <button class="button" onclick="location.href='agreements.html'" data-aos="fade-up">اتفاقيات</button>
         </div>
     </section>
 
@@ -111,19 +129,14 @@
         if (studentName) {
             document.getElementById('welcomeMessage').innerText = `مرحبًا ${studentName}👋🏻،
             اختر المحتوى الذي تريد`; // تحديث الرسالة الترحيبية
-        } else {
-            document.getElementById('welcomeMessage').innerText = 'مرحبًا بك في الموقع التعليمي'; // الرسالة الافتراضية
-        }
+
     </script>
 
-</body>
-</html>
-<div class="btn-group">
-    <button class="cta-btn" onclick="window.location.href='english.html';">مادة الإنجليزي</button>
-    <!-- الأزرار الأخرى هنا -->
-</div>
-<div class="btn-group">
-    <button class="cta-btn" onclick="window.location.href='books.html';">الكتب</button>
-    <!-- باقي الأزرار -->
-</div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    </body>
+
+</html>
